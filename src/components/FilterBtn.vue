@@ -1,11 +1,11 @@
 <template>
-  <button>{{ title.name }}</button>
+  <button>{{ filter.name }}</button>
 </template>
 
 <script>
 export default {
   props: {
-    title: {
+    filter: {
       type: Object,
       required: true
     }

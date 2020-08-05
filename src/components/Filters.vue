@@ -1,6 +1,13 @@
 <template>
   <div>
-    <FilterBtn v-for="(title, index) in filters" :key="index" :title="title" />
+    <span>filters</span>
+    <div class="filter-bar">
+      <FilterBtn
+        v-for="(filter, index) in filters"
+        :key="index"
+        :filter="filter"
+      />
+    </div>
   </div>
 </template>
 
@@ -25,9 +32,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 45px;
+  margin-top: 15px;
+}
+span {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--color-gray);
+  font-family: var(--header-text);
+  font-weight: 500;
+  letter-spacing: 2px;
+  display: block;
 }
 </style>
