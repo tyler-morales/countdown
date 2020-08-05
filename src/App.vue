@@ -1,5 +1,7 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <header>⏰ Tick'it</header>
+  </div>
 </template>
 
 <script>
@@ -11,11 +13,11 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  header {
+    font-family: var(--header-text);
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 100px;
+  }
 }
 </style>
