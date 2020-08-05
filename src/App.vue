@@ -1,23 +1,29 @@
 <template>
   <div id="app">
-    <header>⏰ Tick'it</header>
+    <Header />
+    <div class="content">
+      <Filters />
+    </div>
   </div>
 </template>
 
 <script>
+import Filters from '@/components/Filters'
+import Header from '@/components/Header'
+
 export default {
   name: 'App',
-  components: {}
+  components: {
+    Header,
+    Filters
+  }
 }
 </script>
 
 <style lang="scss">
-#app {
-  header {
-    font-family: var(--header-text);
-    font-size: 45px;
-    font-weight: 700;
-    margin-top: 100px;
-  }
+.content {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 </style>
