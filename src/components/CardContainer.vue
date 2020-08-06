@@ -31,7 +31,7 @@ export default {
           title: 'Autum',
           date: 'September 22, 2020',
           emoji: '🍂',
-          type: 'Holidays',
+          type: 'season',
           year: 2020,
           month: 8,
           day: 22,
@@ -39,10 +39,10 @@ export default {
           minute: 0
         },
         {
-          title: 'Winter',
-          date: 'December 21, 2020',
-          emoji: '⛄️',
-          type: 'Holidays',
+          title: 'Christmas',
+          date: 'December 25, 2020',
+          emoji: '🎅🏼',
+          type: 'holiday',
           year: 2020,
           month: 11,
           day: 21,
@@ -53,7 +53,7 @@ export default {
           title: 'Spring',
           date: 'March 21, 2020',
           emoji: '💐',
-          type: 'Holidays',
+          type: 'season',
           year: 2021,
           month: 2,
           day: 21,
@@ -73,7 +73,7 @@ export default {
         }
       ],
       updateSearch: '',
-      filter: 'All'
+      filter: 'all'
     }
   },
   mounted() {
@@ -88,15 +88,21 @@ export default {
   },
   computed: {
     filteredItems: function() {
+      if (this.filter == 'all') {
+        return this.events
+      }
+      if (this.filter != 'All') {
+        return this.events
+          .filter(event => {
+            return event.title
+              .toLowerCase()
+              .includes(this.updateSearch.toLowerCase())
+          })
+          .filter(event => {
+            return event.type == this.filter
+          })
+      }
       return this.events
-        .filter(event => {
-          return event.title
-            .toLowerCase()
-            .includes(this.updateSearch.toLowerCase())
-        })
-        .filter(event => {
-          return event.type == this.filter
-        })
     }
   }
 }

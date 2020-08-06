@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     emitFilter() {
-      this.filterResult = this.filter.name
+      this.filterResult = this.filter.type
       EventBus.$emit('filter-catagories', this.filterResult)
     }
   }

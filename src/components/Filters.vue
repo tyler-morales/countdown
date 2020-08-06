@@ -24,10 +24,10 @@ export default {
   data() {
     return {
       filters: [
-        { name: 'All' },
-        { name: 'Holidays' },
-        { name: 'Seasons' },
-        { name: 'Events' }
+        { name: 'All', type: 'all' },
+        { name: 'Holidays', type: 'holiday' },
+        { name: 'Seasons', type: 'season' },
+        { name: 'Events', type: 'custom' }
       ]
     }
   }
