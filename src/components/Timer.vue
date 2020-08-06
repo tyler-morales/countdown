@@ -23,10 +23,10 @@ export default {
     year: { type: Number, required: true, default: 2020 },
     month: { type: Number, required: true, default: 0 },
     day: { type: Number, required: true, default: 0 },
-    hour: { type: Number, required: true, default: 0 },
-    minute: { type: Number, required: true, default: 0 },
-    second: { type: Number, required: true, default: 0 },
-    milliseconds: { type: Number, required: true, default: 0 }
+    hour: { type: Number, required: false, default: 0 },
+    minute: { type: Number, required: false, default: 0 },
+    second: { type: Number, required: false, default: 0 },
+    milliseconds: { type: Number, required: false, default: 0 }
   },
   data() {
     return {
@@ -34,8 +34,8 @@ export default {
       displayHours: 0,
       displayMinutes: 0,
       // displaySeconds: 0,
-      loaded: false
-      // expired: false
+      loaded: false,
+      expired: false
     }
   },
   computed: {
@@ -73,7 +73,7 @@ export default {
 
         if (DISTANCE < 0) {
           clearInterval(TIMER)
-          // this.expired = true
+          this.expired = true
           this.loaded = true
           return
         }

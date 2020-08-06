@@ -23,8 +23,8 @@ export default {
           date: 'September 22, 2020',
           emoji: '🍂',
           year: 2020,
-          month: 7,
-          day: 6,
+          month: 8,
+          day: 22,
           hour: 0,
           minute: 0,
           second: 0,
@@ -50,8 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 .cards {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   display: flex;
   flex-wrap: wrap;
   gap: 84px;
