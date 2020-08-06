@@ -37,7 +37,8 @@ export default {
   text-align: center;
   font-weight: 400;
   box-shadow: var(--shadow-lg);
-  width: min-content;
+  // width: min-content;
+  width: 300px;
   padding: 20px 30px;
   border-radius: 20px;
   background-color: #fff;
