@@ -3,7 +3,7 @@
     type="text"
     v-model="search"
     placeholder="Search Countdowns"
-    @change="emitGlobalClickEvent()"
+    @keyup="emitGlobalClickEvent()"
   />
 </template>
 
