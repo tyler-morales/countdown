@@ -3,27 +3,30 @@
     <h3 class="card--title">{{ event.title }}</h3>
     <h3 class="card--date">{{ event.date }}</h3>
     <span class="card--emoji">{{ event.emoji }}</span>
-    <div class="card__countdown">
-      <div class="card__countdown__num">
-        <span class="card__countdown__num--time">{{ event.daysLeft }}</span>
-        <span class="card__countdown__num--unit">Days</span>
-      </div>
-      <span class="card__countdown__num--colon">:</span>
-      <div class="card__countdown__num">
-        <span class="card__countdown__num--time">{{ event.hoursLeft }}</span>
-        <span class="card__countdown__num--unit">Hours</span>
-      </div>
-    </div>
+    <Timer
+      :year="event.year"
+      :month="event.month"
+      :day="event.day"
+      :hour="event.hour"
+      :minute="event.minute"
+      :second="event.second"
+      :milliseconds="event.milliseconds"
+    />
   </div>
 </template>
 
 <script>
+import Timer from '@/components/Timer'
+
 export default {
   props: {
     event: {
       type: Object,
       required: true
     }
+  },
+  components: {
+    Timer
   }
 }
 </script>
@@ -54,31 +57,6 @@ export default {
     padding: 0 20px;
     border-radius: 20px;
     background-color: var(--color-lightgray);
-  }
-
-  &__countdown {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-
-    &__num {
-      display: flex;
-      flex-direction: column;
-
-      &--time {
-        color: var(--color-primary);
-        font-size: 40px;
-      }
-      &--unit {
-        color: var(--color-gray);
-        font-size: 12;
-      }
-      &--colon {
-        color: var(--color-primary);
-        font-size: 40px;
-        line-height: 1.4em;
-      }
-    }
   }
 }
 </style>

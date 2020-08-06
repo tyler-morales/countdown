@@ -12,6 +12,9 @@
 import CountdownCard from '@/components/CountdownCard'
 
 export default {
+  components: {
+    CountdownCard
+  },
   data() {
     return {
       events: [
@@ -19,14 +22,28 @@ export default {
           title: 'Autum',
           date: 'September 22, 2020',
           emoji: '🍂',
-          daysLeft: 35,
-          hoursLeft: 12
+          year: 2020,
+          month: 7,
+          day: 6,
+          hour: 0,
+          minute: 0,
+          second: 0,
+          milliseconds: 0
+        },
+        {
+          title: 'Winter',
+          date: 'December 21, 2020',
+          emoji: '⛄️',
+          year: 2020,
+          month: 11,
+          day: 21,
+          hour: 0,
+          minute: 0,
+          second: 0,
+          milliseconds: 0
         }
       ]
     }
-  },
-  components: {
-    CountdownCard
   }
 }
 </script>
