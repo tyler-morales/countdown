@@ -57,9 +57,11 @@ export default {
     })
   },
   computed: {
-    filteredEvents: function() {
+    filteredEvents() {
       return this.events.filter(event => {
-        return event.title.match(this.updateSearch)
+        return event.title
+          .toLowerCase()
+          .includes(this.updateSearch.toLowerCase())
       })
     }
   }
