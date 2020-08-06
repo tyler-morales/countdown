@@ -1,13 +1,26 @@
 <template>
-  <button>{{ filter.name }}</button>
+  <button @click="emitFilter">{{ filter.name }}</button>
 </template>
 
 <script>
+import EventBus from '@/components/EventBus'
+
 export default {
   props: {
     filter: {
       type: Object,
       required: true
+    }
+  },
+  data() {
+    return {
+      filterResult: ''
+    }
+  },
+  methods: {
+    emitFilter() {
+      this.filterResult = this.filter.name
+      EventBus.$emit('filter-catagories', this.filterResult)
     }
   }
 }

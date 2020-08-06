@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
     <CountdownCard
-      v-for="(event, index) in filteredEvents"
+      v-for="(event, index) in filteredItems"
       :key="index"
       :event="event"
     />
@@ -31,6 +31,7 @@ export default {
           title: 'Autum',
           date: 'September 22, 2020',
           emoji: '🍂',
+          type: 'Holidays',
           year: 2020,
           month: 8,
           day: 22,
@@ -41,6 +42,7 @@ export default {
           title: 'Winter',
           date: 'December 21, 2020',
           emoji: '⛄️',
+          type: 'Holidays',
           year: 2020,
           month: 11,
           day: 21,
@@ -49,40 +51,52 @@ export default {
         },
         {
           title: 'Spring',
-          date: 'December 21, 2020',
+          date: 'March 21, 2020',
           emoji: '💐',
-          year: 2020,
-          month: 11,
+          type: 'Holidays',
+          year: 2021,
+          month: 2,
           day: 21,
           hour: 0,
           minute: 0
         },
         {
-          title: 'Summer',
-          date: 'December 21, 2020',
-          emoji: '🏖',
+          title: "Tyler's Birthday",
+          date: 'September 14, 2020',
+          emoji: '🎂',
+          type: 'custom',
           year: 2020,
-          month: 11,
-          day: 21,
+          month: 8,
+          day: 14,
           hour: 0,
           minute: 0
         }
       ],
-      updateSearch: ''
+      updateSearch: '',
+      filter: 'All'
     }
   },
   mounted() {
-    EventBus.$on('search-countdowns', search => {
-      this.updateSearch = search
-    })
+    return (
+      EventBus.$on('search-countdowns', search => {
+        this.updateSearch = search
+      }),
+      EventBus.$on('filter-catagories', filter => {
+        this.filter = filter
+      })
+    )
   },
   computed: {
-    filteredEvents() {
-      return this.events.filter(event => {
-        return event.title
-          .toLowerCase()
-          .includes(this.updateSearch.toLowerCase())
-      })
+    filteredItems: function() {
+      return this.events
+        .filter(event => {
+          return event.title
+            .toLowerCase()
+            .includes(this.updateSearch.toLowerCase())
+        })
+        .filter(event => {
+          return event.type == this.filter
+        })
     }
   }
 }

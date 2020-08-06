@@ -3,7 +3,7 @@
     type="text"
     v-model="search"
     placeholder="Search Countdowns"
-    @keyup="emitGlobalClickEvent()"
+    @keyup="emitGlobalKeyupSearch()"
   />
 </template>
 
@@ -16,7 +16,7 @@ export default {
     }
   },
   methods: {
-    emitGlobalClickEvent() {
+    emitGlobalKeyupSearch() {
       this.search
       EventBus.$emit('search-countdowns', this.search)
     }
