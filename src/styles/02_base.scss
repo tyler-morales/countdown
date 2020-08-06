@@ -1,4 +1,11 @@
 body {
   background-color: var(--bg-color);
+  font-family: var(--body-text);
 }
 
+input,
+button {
+  &:focus {
+    outline: 2px dotted var(--color-primary);
+  }
+}

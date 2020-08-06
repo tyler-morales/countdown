@@ -3,7 +3,7 @@
     <Header />
     <div class="content">
       <Filters />
-      <SearchCountdowns />
+      <!-- <SearchCountdowns /> -->
       <CardContainer />
     </div>
   </div>
@@ -13,15 +13,15 @@
 import Filters from '@/components/Filters'
 import Header from '@/components/Header'
 import CardContainer from '@/components/CardContainer'
-import SearchCountdowns from '@/components/SearchCountdowns'
+// import SearchCountdowns from '@/components/SearchCountdowns'
 
 export default {
   name: 'App',
   components: {
     Header,
     Filters,
-    CardContainer,
-    SearchCountdowns
+    CardContainer
+    // SearchCountdowns
   }
 }
 </script>

@@ -36,7 +36,7 @@ export default {
   font-family: var(--body-text);
   text-align: center;
   font-weight: 400;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-lg);
   width: min-content;
   padding: 20px 30px;
   border-radius: 20px;

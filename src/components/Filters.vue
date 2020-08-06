@@ -7,16 +7,19 @@
         :key="index"
         :filter="filter"
       />
+      <SearchCountdowns />
     </div>
   </div>
 </template>
 
 <script>
 import FilterBtn from '@/components/FilterBtn'
+import SearchCountdowns from '@/components/SearchCountdowns'
 
 export default {
   components: {
-    FilterBtn
+    FilterBtn,
+    SearchCountdowns
   },
   data() {
     return {

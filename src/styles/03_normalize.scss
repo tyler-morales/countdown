@@ -11,3 +11,11 @@ button {
     cursor: pointer;
   }
 }
+
+input {
+  border: none;
+
+  &:hover {
+    cursor: text;
+  }
+}
