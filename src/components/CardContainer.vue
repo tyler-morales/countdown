@@ -46,6 +46,26 @@ export default {
           day: 21,
           hour: 0,
           minute: 0
+        },
+        {
+          title: 'Spring',
+          date: 'December 21, 2020',
+          emoji: '💐',
+          year: 2020,
+          month: 11,
+          day: 21,
+          hour: 0,
+          minute: 0
+        },
+        {
+          title: 'Summer',
+          date: 'December 21, 2020',
+          emoji: '🏖',
+          year: 2020,
+          month: 11,
+          day: 21,
+          hour: 0,
+          minute: 0
         }
       ],
       updateSearch: ''
