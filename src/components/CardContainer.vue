@@ -28,11 +28,11 @@ export default {
     return {
       events: [
         {
-          title: 'Autum',
+          title: 'Yam Kipur',
           date: 'September 22, 2020',
           emoji: '🍂',
           type: 'season',
-          year: 2020,
+          year: 2030,
           month: 8,
           day: 22,
           hour: 0,
@@ -40,7 +40,7 @@ export default {
         },
         {
           title: 'Christmas',
-          date: 'December 25, 2020',
+          date: 'December 25, 2021',
           emoji: '🎅🏼',
           type: 'holiday',
           year: 2020,
@@ -65,7 +65,7 @@ export default {
           date: 'September 14, 2020',
           emoji: '🎂',
           type: 'custom',
-          year: 2020,
+          year: 2022,
           month: 8,
           day: 14,
           hour: 0,
@@ -76,7 +76,7 @@ export default {
           date: 'December 29, 2020',
           emoji: '🥳',
           type: 'custom',
-          year: 2020,
+          year: 2000,
           month: 11,
           day: 29,
           hour: 0,
@@ -84,7 +84,8 @@ export default {
         }
       ],
       updateSearch: '',
-      filter: ''
+      filter: 'all',
+      sort: 'alpha'
     }
   },
   mounted() {
@@ -94,29 +95,34 @@ export default {
       }),
       EventBus.$on('filter-catagories', filter => {
         this.filter = filter
+      }),
+      EventBus.$on('sort-catagories', sort => {
+        this.sort = sort
       })
     )
   },
   computed: {
     filteredItems: function() {
-      // filters at work
-      return (
-        this.events
-          // search filter
-          .filter(event => {
-            return event.title
-              .toLowerCase()
-              .includes(this.updateSearch.toLowerCase())
-          })
-          // category filters
-          .filter(event => {
-            if (this.filter == '' || this.filter == 'all') {
-              return this.events
-            } else {
-              return event.type == this.filter
-            }
-          })
-      )
+      let updateSearch = this.updateSearch.toLowerCase() // cached
+      return this.events
+        .filter(
+          (
+            event // uses the implicit return of arrow functions
+          ) =>
+            event.title.toLowerCase().includes(updateSearch) &&
+            (this.filter == '' ||
+              this.filter == 'all' ||
+              event.type == this.filter) // short-circuiting (https://stackoverflow.com/q/12554578/)
+        )
+        .sort((a, b) => {
+          if (this.sort == 'alpha') {
+            return a.title.localeCompare(b.title)
+          }
+          if (this.sort == 'timeLeast') {
+            return b.year - a.year // https://stackoverflow.com/q/1063007/
+          }
+          // what's the default sort?
+        })
     }
   }
 }

@@ -3,6 +3,7 @@
     <span>filters</span>
     <div class="filter-bar">
       <FilterBtn />
+      <Dropdown :menuLabel="menuLabel" :choices="myChoices"></Dropdown>
       <SearchCountdowns />
     </div>
   </div>
@@ -11,11 +12,23 @@
 <script>
 import FilterBtn from '@/components/FilterBtn'
 import SearchCountdowns from '@/components/SearchCountdowns'
+import Dropdown from '@/components/Dropdown'
 
 export default {
   components: {
     FilterBtn,
-    SearchCountdowns
+    SearchCountdowns,
+    Dropdown
+  },
+  data: function() {
+    return {
+      myChoices: [
+        { label: 'Alphabetically', name: 'alpha' },
+        { label: 'Time Left (least)', name: 'timeLeast' },
+        { label: 'Time Left (most)', name: 'timeMost' }
+      ],
+      menuLabel: 'SortDropdown'
+    }
   }
 }
 </script>
