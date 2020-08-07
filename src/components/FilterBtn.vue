@@ -40,13 +40,13 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  padding: 5px 30px;
+  padding: 8px 30px;
   border-radius: 20px;
   background-color: var(--color-primary);
   color: #fff;
   font-size: 24px;
   transition: all 0.3s;
-  margin: 0 10px;
+  margin-right: 20px;
   border: 3px solid #fafafa;
 
   // &:hover {

@@ -17,22 +17,13 @@ export default {
     FilterBtn,
     SearchCountdowns
   }
-  // data() {
-  //   return {
-  //     filters: [
-  //       { name: 'All', type: 'all' },
-  //       { name: 'Holidays', type: 'holiday' },
-  //       { name: 'Seasons', type: 'season' },
-  //       { name: 'Events', type: 'custom' }
-  //     ]
-  //   }
-  // }
 }
 </script>
 
 <style lang="scss" scoped>
 .filter-bar {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 45px;
   margin-top: 15px;
