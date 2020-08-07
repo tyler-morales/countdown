@@ -5,9 +5,13 @@
       :key="index"
       :event="event"
     />
-    <h1 v-if="customCount == 0 && this.filter == 'custom'">
-      You haven't created any events. Create one!
-    </h1>
+    <div
+      class="createEventBox"
+      v-if="customCount == 0 && this.filter == 'custom'"
+    >
+      <h1>You haven't created any events. Create one!</h1>
+      <button>Create Event</button>
+    </div>
   </div>
 </template>
 
@@ -125,6 +129,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.createEventBox {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
