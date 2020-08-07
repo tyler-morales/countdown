@@ -30,17 +30,19 @@ export default {
         {
           title: 'Autum',
           date: 'September 22, 2020',
+          arrDate: new Date('2020-08-22'),
           emoji: '🍂',
           type: 'season',
           year: 2020,
           month: 8,
-          day: 22,
+          day: 21,
           hour: 0,
           minute: 0
         },
         {
           title: 'Winter',
           date: 'December 21, 2020',
+          arrDate: new Date('2020-12-21'),
           emoji: '🎄',
           type: 'season',
           year: 2020,
@@ -51,7 +53,8 @@ export default {
         },
         {
           title: 'Halloween',
-          date: 'October 13, 2020',
+          date: 'October 31, 2020',
+          arrDate: new Date('2020-10-31'),
           emoji: '🎃',
           type: 'holiday',
           year: 2020,
@@ -99,16 +102,14 @@ export default {
             }
           })
           .sort((a, b) => {
-            if (this.sort == 'alpha') {
-              return a.title.localeCompare(b.title)
-            }
             if (this.sort == 'timeLeast') {
-              return a.month - b.month // https://stackoverflow.com/q/1063007/
+              return a.arrDate - b.arrDate
             }
             if (this.sort == 'timeMost') {
-              return b.month - a.month // https://stackoverflow.com/q/1063007/
+              return b.arrDate - a.arrDate
             }
-            // what's the default sort?
+            // default sort: alphabetically
+            return a.title.localeCompare(b.title)
           })
       )
     }
