@@ -88,19 +88,25 @@ export default {
   },
   computed: {
     filteredItems: function() {
+      // initial population
       if (this.filter == 'all') {
         return this.events
       }
+      // filters at work
       if (this.filter != 'All') {
-        return this.events
-          .filter(event => {
-            return event.title
-              .toLowerCase()
-              .includes(this.updateSearch.toLowerCase())
-          })
-          .filter(event => {
-            return event.type == this.filter
-          })
+        return (
+          this.events
+            // search filter
+            .filter(event => {
+              return event.title
+                .toLowerCase()
+                .includes(this.updateSearch.toLowerCase())
+            })
+            // category filters
+            .filter(event => {
+              return event.type == this.filter
+            })
+        )
       }
       return this.events
     }
