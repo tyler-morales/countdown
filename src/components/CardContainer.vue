@@ -5,6 +5,9 @@
       :key="index"
       :event="event"
     />
+    <h1 v-if="customCount == 0 && this.filter == 'custom'">
+      You haven't created any events. Create one!
+    </h1>
   </div>
 </template>
 
@@ -66,21 +69,25 @@ export default {
       ],
       updateSearch: '',
       filter: 'all',
-      sort: 'alpha'
+      sort: 'alpha',
+      customCount: 0
     }
   },
   mounted() {
-    return (
-      EventBus.$on('search-countdowns', search => {
-        this.updateSearch = search
-      }),
+    this.events.forEach(event => {
+      if (event.type == 'custom') {
+        this.customCount++
+      }
+    })
+    EventBus.$on('search-countdowns', search => {
+      this.updateSearch = search
+    }),
       EventBus.$on('filter-catagories', filter => {
         this.filter = filter
       }),
       EventBus.$on('sort-catagories', sort => {
         this.sort = sort
       })
-    )
   },
   computed: {
     filteredItems: function() {
