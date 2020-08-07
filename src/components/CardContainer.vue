@@ -70,10 +70,21 @@ export default {
           day: 14,
           hour: 0,
           minute: 0
+        },
+        {
+          title: "Mom's Birthday",
+          date: 'December 29, 2020',
+          emoji: '🥳',
+          type: 'custom',
+          year: 2020,
+          month: 11,
+          day: 29,
+          hour: 0,
+          minute: 0
         }
       ],
       updateSearch: '',
-      filter: 'all'
+      filter: ''
     }
   },
   mounted() {
@@ -88,27 +99,24 @@ export default {
   },
   computed: {
     filteredItems: function() {
-      // initial population
-      if (this.filter == 'all') {
-        return this.events
-      }
       // filters at work
-      if (this.filter != 'All') {
-        return (
-          this.events
-            // search filter
-            .filter(event => {
-              return event.title
-                .toLowerCase()
-                .includes(this.updateSearch.toLowerCase())
-            })
-            // category filters
-            .filter(event => {
+      return (
+        this.events
+          // search filter
+          .filter(event => {
+            return event.title
+              .toLowerCase()
+              .includes(this.updateSearch.toLowerCase())
+          })
+          // category filters
+          .filter(event => {
+            if (this.filter == '' || this.filter == 'all') {
+              return this.events
+            } else {
               return event.type == this.filter
-            })
-        )
-      }
-      return this.events
+            }
+          })
+      )
     }
   }
 }
