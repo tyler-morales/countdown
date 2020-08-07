@@ -1,26 +1,38 @@
 <template>
-  <button @click="emitFilter">{{ filter.name }}</button>
+  <div>
+    <button
+      v-for="(filter, index) in filters"
+      :key="index"
+      :class="{ active: index === activeItem }"
+      @click="selectItem(index), emitFilter(filter.type)"
+    >
+      {{ filter.name }}
+    </button>
+  </div>
 </template>
 
 <script>
 import EventBus from '@/components/EventBus'
-
 export default {
-  props: {
-    filter: {
-      type: Object,
-      required: true
-    }
-  },
   data() {
     return {
-      filterResult: ''
+      activeItem: 0,
+      filterResult: '',
+      filters: [
+        { name: 'All', type: 'all' },
+        { name: 'Holidays', type: 'holiday' },
+        { name: 'Seasons', type: 'season' },
+        { name: 'Events', type: 'custom' }
+      ]
     }
   },
   methods: {
-    emitFilter() {
-      this.filterResult = this.filter.type
+    emitFilter(type) {
+      this.filterResult = type
       EventBus.$emit('filter-catagories', this.filterResult)
+    },
+    selectItem(index) {
+      this.activeItem = index
     }
   }
 }
@@ -34,9 +46,11 @@ button {
   color: #fff;
   font-size: 24px;
   transition: all 0.3s;
+  margin: 0 10px;
+  border: 3px solid #fafafa;
 
-  &:hover {
-    transform: translateY(-1px);
-  }
+  // &:hover {
+  //   transform: translateY(-1px);
+  // }
 }
 </style>

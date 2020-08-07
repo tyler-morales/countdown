@@ -2,11 +2,7 @@
   <div>
     <span>filters</span>
     <div class="filter-bar">
-      <FilterBtn
-        v-for="(filter, index) in filters"
-        :key="index"
-        :filter="filter"
-      />
+      <FilterBtn />
       <SearchCountdowns />
     </div>
   </div>
@@ -20,17 +16,17 @@ export default {
   components: {
     FilterBtn,
     SearchCountdowns
-  },
-  data() {
-    return {
-      filters: [
-        { name: 'All', type: 'all' },
-        { name: 'Holidays', type: 'holiday' },
-        { name: 'Seasons', type: 'season' },
-        { name: 'Events', type: 'custom' }
-      ]
-    }
   }
+  // data() {
+  //   return {
+  //     filters: [
+  //       { name: 'All', type: 'all' },
+  //       { name: 'Holidays', type: 'holiday' },
+  //       { name: 'Seasons', type: 'season' },
+  //       { name: 'Events', type: 'custom' }
+  //     ]
+  //   }
+  // }
 }
 </script>
 

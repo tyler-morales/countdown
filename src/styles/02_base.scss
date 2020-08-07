@@ -9,3 +9,9 @@ button {
     outline: 2px dotted var(--color-primary);
   }
 }
+
+.active {
+  background: none;
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary);
+}
