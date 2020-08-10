@@ -6,7 +6,7 @@
         <span class="downArrow"></span>
       </span>
     </div>
-    <transition name="grow">
+    <transition name="slide">
       <div class="options" v-if="opened">
         <span
           v-for="(option, index) in choices"
@@ -58,29 +58,35 @@ export default {
   flex-direction: column;
   position: relative;
 }
+
 /*  Box with current selection e.g. <select/>  */
 .dropDownContainer .selection {
-  display: inline-block;
   position: relative;
-  height: 32px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #e3e3e3; /* Light Grey */
-  border: none;
-  border-radius: 5px 5px 0px 0px;
-  border-bottom: 1px solid #5f6161;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 20px;
   cursor: pointer;
+  padding: 8px 30px;
+  background-color: var(--color-primary);
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px -4px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-primary);
+  }
 }
-/* Active style when list is open */
-.dropDownContainer .selection.opened {
-  border-bottom: 2px solid #4a9fff; /*  Sky Blue  */
-}
+
 .selection span.selectionText {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  font-family: var(--header-text);
+  border-radius: 20px;
+  font-size: 24px;
+  transition: all 0.2s;
 }
 
 /* DownArrow in selection */
@@ -91,52 +97,50 @@ export default {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #5f6161;
+  border-top: 5px solid white;
   margin-left: 20px;
   transition: all 0.1s linear;
 }
 
 /* Down arrow when opened */
 .selection.opened span.downArrow {
-  border-top: 5px solid #4a9fff; /*  Sky Blue  */
   transform: rotate(180deg);
-  /*   bottom: 3px; */
 }
 /* List of options */
 .dropDownContainer .options {
   display: inline-block;
   position: absolute;
   width: 100%;
-  top: 34px;
+  top: 54px;
   background-color: #ffffff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 0 0 5px 5px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  box-shadow: 0 5px 25px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: 8px;
 }
 /* Individual Option */
 .dropDownContainer .options span {
   display: block;
   position: relative;
   cursor: pointer;
-  padding: 7px;
+  padding: 8px 10px;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 /* Individual Option Hover */
 .dropDownContainer .options span:hover {
-  background-color: #e3e3e3;
+  // color: var(--color-primary);
+  background-color: var(--color-lightgray);
 }
-/* Transition animation when options open/close */
-.grow-enter,
-.grow-leave-to {
-  transform: scaleY(0);
-  transform-origin: top;
-  /*   opacity: 0; */
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s;
 }
-.grow-enter-active,
-.grow-leave-active {
-  transition: transform 0.4s;
-  transform-origin: top;
-  /*   transition: opacity .3s; */
+.slide-enter, .slide-leave-to
+/* .slide-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
 }
 </style>

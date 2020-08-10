@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 button {
+  font-family: var(--header-text);
   padding: 8px 30px;
   border-radius: 20px;
   background-color: var(--color-primary);

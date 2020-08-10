@@ -95,9 +95,9 @@ export default {
   },
   computed: {
     filteredItems: function() {
-      // filters at work
       return (
         this.events
+          // filters at work
           // search filter
           .filter(event => {
             return event.title

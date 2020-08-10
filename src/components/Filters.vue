@@ -36,7 +36,6 @@ export default {
 <style lang="scss" scoped>
 .filter-bar {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 45px;
   margin-top: 15px;
