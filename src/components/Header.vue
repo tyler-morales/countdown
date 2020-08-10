@@ -42,6 +42,10 @@ header {
     span {
       font-family: var(--body-text);
       font-size: 18px;
+
+      @include breakpoint(sm) {
+        display: none;
+      }
     }
   }
 }

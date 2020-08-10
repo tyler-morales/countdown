@@ -50,8 +50,10 @@ button {
   margin-right: 20px;
   border: 3px solid #fafafa;
 
-  // &:hover {
-  //   transform: translateY(-1px);
-  // }
+  @include breakpoint(sm) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 </style>

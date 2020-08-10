@@ -57,6 +57,10 @@ export default {
   display: inline-flex;
   flex-direction: column;
   position: relative;
+
+  @include breakpoint(sm) {
+    width: 100%;
+  }
 }
 
 /*  Box with current selection e.g. <select/>  */

@@ -141,5 +141,10 @@ export default {
   flex-wrap: wrap;
   gap: 84px;
   margin-top: 50px;
+  justify-content: center;
+
+  @include breakpoint(sm) {
+    gap: 40px;
+  }
 }
 </style>

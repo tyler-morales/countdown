@@ -28,5 +28,10 @@ export default {
   width: 80vw;
   margin: 0 auto;
   margin-top: 100px;
+
+  @include breakpoint(sm) {
+    margin: 20px auto;
+    width: 90vw;
+  }
 }
 </style>
