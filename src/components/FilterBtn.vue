@@ -43,12 +43,12 @@ button {
   font-family: var(--header-text);
   padding: 8px 30px;
   border-radius: 20px;
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: 24px;
-  transition: all 0.3s;
+  transition: all 0.2s;
   margin-right: 20px;
-  border: 3px solid #fafafa;
+  border: 3px solid transparent;
 
   @include breakpoint(sm) {
     width: 100%;

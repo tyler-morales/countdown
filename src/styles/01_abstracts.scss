@@ -1,7 +1,8 @@
 :root {
   //colors
   --bg-color: #F2F2F2;
-  --color-primary: #4325a5;
+  --color-primary: rgb(7, 88, 255);
+  --color-primary-light: rgba(7, 88, 255, .05);
   --color-gray: #bdbdbd;
   --color-lightgray: #eeeeee;
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -16,22 +17,30 @@
 
 // mixins
 @mixin breakpoint($class) {
-  @if $class == xs {
-    @media (max-width: 500px) { @content; }
+  @if $class==xs {
+    @media (max-width: 500px) {
+      @content;
+    }
   }
- 
-  @else if $class == sm {
-    @media (max-width: 600px) { @content; }
+
+  @else if $class==sm {
+    @media (max-width: 600px) {
+      @content;
+    }
   }
- 
-  @else if $class == md {
-    @media (max-width: 992px) { @content; }
+
+  @else if $class==md {
+    @media (max-width: 992px) {
+      @content;
+    }
   }
- 
-  @else if $class == lg {
-    @media (max-width: 1200px) { @content; }
+
+  @else if $class==lg {
+    @media (max-width: 1200px) {
+      @content;
+    }
   }
- 
+
   @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }

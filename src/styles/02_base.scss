@@ -6,12 +6,12 @@ body {
 input,
 button {
   &:focus {
-    outline: 2px dotted var(--color-primary);
+    transform: translateY(-3px);
+    outline: none;
   }
 }
 
 .active {
-  background: none;
   border: 3px solid var(--color-primary);
   color: var(--color-primary);
 }
