@@ -26,12 +26,11 @@ export default {
 
 <style lang="scss" scoped>
 input {
-  // margin-top: 20px;
   font-size: 24px;
   border-radius: 20px;
   padding: 10px 20px;
-  box-shadow: var(--shadow-md);
-  // width: 100%;
+  box-shadow: var(--shadow-base);
   flex: 1;
+  color: rgba(var(--color-text-black), 1);
 }
 </style>

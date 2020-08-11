@@ -77,7 +77,7 @@ export default {
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 25px -4px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-base);
     background-color: var(--color-primary);
   }
 }
@@ -117,7 +117,7 @@ export default {
   width: 100%;
   top: 54px;
   background-color: #ffffff;
-  box-shadow: 0 5px 25px -4px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-base);
   border-radius: 20px;
   padding: 8px;
 }
@@ -133,8 +133,7 @@ export default {
 
 /* Individual Option Hover */
 .dropDownContainer .options span:hover {
-  // color: var(--color-primary);
-  background-color: var(--color-lightgray);
+  background-color: var(--color-primary-light);
 }
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */

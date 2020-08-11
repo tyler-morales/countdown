@@ -50,10 +50,17 @@ button {
   margin-right: 20px;
   border: 3px solid transparent;
 
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-base);
+    color: rgba(var(--color-text-black), 1);
+    background-color: #fff;
+  }
+
   @include breakpoint(sm) {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }
 </style>
