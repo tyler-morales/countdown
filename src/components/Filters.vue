@@ -1,9 +1,14 @@
 <template>
   <div>
-    <span>filters</span>
     <div class="filter-bar">
-      <FilterBtn />
-      <Dropdown :menuLabel="menuLabel" :choices="myChoices"></Dropdown>
+      <div class="filter-bar__filters">
+        <span class="filter-category">filters</span>
+        <FilterBtn />
+      </div>
+      <div class="filter-bar__sort">
+        <span class="filter-category">sort</span>
+        <Dropdown :menuLabel="menuLabel" :choices="myChoices" />
+      </div>
       <SearchCountdowns />
     </div>
   </div>
@@ -35,12 +40,21 @@ export default {
 
 <style lang="scss" scoped>
 .filter-bar {
-  display: flex;
+  grid-template-columns: repeat(2, max-content);
+  display: grid;
   flex-wrap: wrap;
   gap: 45px;
   margin-top: 15px;
+
+  @include breakpoint(lg) {
+    grid-template-columns: max-content;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr;
+  }
 }
-span {
+.filter-category {
   text-transform: uppercase;
   font-size: 12px;
   color: var(--color-gray);
@@ -48,5 +62,6 @@ span {
   font-weight: 500;
   letter-spacing: 2px;
   display: block;
+  margin-bottom: 10px;
 }
 </style>

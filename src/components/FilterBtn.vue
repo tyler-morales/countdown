@@ -50,6 +50,10 @@ button {
   margin-right: 20px;
   border: 3px solid transparent;
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-base);
@@ -57,10 +61,19 @@ button {
     background-color: #fff;
   }
 
+  @include breakpoint(md) {
+    margin-bottom: 20px;
+  }
+
   @include breakpoint(sm) {
     width: 100%;
     margin-right: 0;
     margin-bottom: 15px;
   }
+}
+
+.active {
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary);
 }
 </style>

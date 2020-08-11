@@ -30,7 +30,11 @@ input {
   border-radius: 20px;
   padding: 10px 20px;
   box-shadow: var(--shadow-base);
-  flex: 1;
   color: rgba(var(--color-text-black), 1);
+  grid-column: 1/3;
+
+  @include breakpoint(lg) {
+    grid-column: 1/2;
+  }
 }
 </style>

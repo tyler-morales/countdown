@@ -70,7 +70,7 @@ export default {
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
-  padding: 8px 30px;
+  padding: 10px 30px;
   background-color: var(--color-primary);
 
   transition: all 0.3s;
