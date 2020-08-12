@@ -1,6 +1,9 @@
 <template>
   <footer>
-    <h4>Made with ♡ by Tyler Morales</h4>
+    <h4>
+      Made with ♡ by
+      <a href="https://tmo.codes" target="”_blank”">Tyler Morales</a>
+    </h4>
 
     <div id="bmc-button">
       <a
@@ -10,7 +13,9 @@
         ><img
           src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
           alt="Buy me a coffee"
-        /><span style="margin-left:5px;font-size:18px !important;">Buy me a coffee</span></a
+        /><span style="margin-left:5px;font-size:18px !important;"
+          >Buy me a coffee</span
+        ></a
       >
     </div>
   </footer>
@@ -28,6 +33,29 @@ h4 {
   text-align: center;
   padding: 20px;
   font-weight: 400;
+
+  a {
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 2px;
+      left: 50%; // expand from middle
+      position: absolute;
+      background: var(--color-primary);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+  }
 }
 #bmc-button {
   text-align: center;
