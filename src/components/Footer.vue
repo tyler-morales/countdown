@@ -10,9 +10,7 @@
         ><img
           src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
           alt="Buy me a coffee"
-        /><span style="margin-left:5px;font-size:18px !important;"
-          >Buy me a coffee</span
-        ></a
+        /><span style="margin-left:5px;font-size:18px !important;">Buy me a coffee</span></a
       >
     </div>
   </footer>

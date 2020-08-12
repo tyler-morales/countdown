@@ -19,6 +19,26 @@
   </noscript>
   <div id="app"></div>
   <!-- built files will be auto injected -->
+
+  <script>
+    const pressed = []
+    const secretCode = 'malik'
+
+    //algorithm that searches for code and typed input from user
+    window.addEventListener('keyup', (e) => {
+      pressed.push(e.key)
+      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+
+      if (pressed.join('').includes(secretCode)) {
+        // action taken what code = user input
+        console.log('Easter Egg Found 🥚🐇')
+        const image = document.createElement('img')
+        image.src = 'https://media.giphy.com/media/hT6X1R0RL0ZGrrMIXG/giphy.gif'
+        image.classList.add('🥚')
+        document.querySelector('body').appendChild(image)
+      }
+    })
+  </script>
 </body>
 
 </html>

@@ -22,6 +22,9 @@ export default {
     Filters,
     CardContainer,
     Footer
+  },
+  mounted() {
+    
   }
 }
 </script>
