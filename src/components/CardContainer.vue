@@ -170,7 +170,7 @@ export default {
           title: 'Thanksgiving Day',
           date: 'November 26, 2020',
           arrDate: new Date('2020-11-26'),
-          emoji: '🇺🇸',
+          emoji: '🦃',
           type: 'holiday',
           year: 2020,
           month: 10,

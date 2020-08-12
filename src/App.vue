@@ -5,6 +5,7 @@
       <Filters />
       <CardContainer />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -12,13 +13,15 @@
 import Filters from '@/components/Filters'
 import Header from '@/components/Header'
 import CardContainer from '@/components/CardContainer'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
     Filters,
-    CardContainer
+    CardContainer,
+    Footer
   }
 }
 </script>

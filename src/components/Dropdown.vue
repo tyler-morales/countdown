@@ -66,19 +66,17 @@ export default {
 /*  Box with current selection e.g. <select/>  */
 .dropDownContainer .selection {
   position: relative;
-  background-color: var(--color-primary);
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
   padding: 10px 30px;
   background-color: var(--color-primary);
 
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-base);
-    background-color: var(--color-primary);
   }
 }
 
