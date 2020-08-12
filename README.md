@@ -1,4 +1,21 @@
-# countdown
+# Tick'it: Countdown timers
+![Screenshot](screenshot.png)
+
+## 👀 Overview
+⏱ Tick'it is a single page application that allows users to view an array a countdown timers. These timer ranger from US holidays to seasons. 
+
+## 🦾 Features
+- Ability to sort and filter events by alphabet, least/ most time left and through search
+- Modern UI
+
+## 🖥 Technology Stack
+- Vue (ES6, HTML5, SCSS)
+
+## 🚧 Future Updates
+- Add users to input their own events
+- Add transitions on cards as they are filtered/ sorted
+- Add a dark theme
+- Add more accessibility features for the sort functionality
 
 ## Project setup
 ```
