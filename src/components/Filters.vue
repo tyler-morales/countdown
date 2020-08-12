@@ -28,8 +28,8 @@ export default {
   data: function() {
     return {
       myChoices: [
-        { label: 'Alphabetically', name: 'alpha' },
         { label: 'Time Left (least)', name: 'timeLeast' },
+        { label: 'Alphabetically', name: 'alpha' },
         { label: 'Time Left (most)', name: 'timeMost' }
       ],
       menuLabel: 'SortDropdown'

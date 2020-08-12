@@ -160,7 +160,7 @@ export default {
           arrDate: new Date('2021-11-11'),
           emoji: '🇺🇸',
           type: 'holiday',
-          year: 2020,
+          year: 2021,
           month: 10,
           day: 11,
           hour: 0,
@@ -193,7 +193,7 @@ export default {
       ],
       updateSearch: '',
       filter: 'all',
-      sort: 'alpha',
+      sort: 'timeLeast',
       customCount: 0
     }
   },
@@ -233,14 +233,14 @@ export default {
             }
           })
           .sort((a, b) => {
-            if (this.sort == 'timeLeast') {
-              return a.arrDate - b.arrDate
+            if (this.sort == 'alpha') {
+              return a.title.localeCompare(b.title)
             }
             if (this.sort == 'timeMost') {
               return b.arrDate - a.arrDate
             }
             // default sort: alphabetically
-            return a.title.localeCompare(b.title)
+            return a.arrDate - b.arrDate
           })
       )
     }
