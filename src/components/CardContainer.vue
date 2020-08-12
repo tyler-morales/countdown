@@ -9,8 +9,8 @@
       class="createEventBox"
       v-if="customCount == 0 && this.filter == 'custom'"
     >
-      <h1>You haven't created any events. Create one!</h1>
-      <button>Create Event</button>
+      <h1>You haven't created any events!</h1>
+      <p>🚧Feature comming soon to add custom user events 🚧</p>
     </div>
   </div>
 </template>
